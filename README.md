@@ -21,9 +21,7 @@ The goals / steps of this project are the following:
 [image4]: ./output_images/warped.png "Warp Example"
 [image5]: ./output_images/curve_fit.png "Fit Visual"
 [image6]: ./output_images/processed.png "Output"
-[video1]: ./output_videos/project_video_output.mp4 "Project Video"
-[video2]: ./output_videos/challenge_video_output.mp4 "Challenge Video"
-
+[image7]: ./output_images/radius.png "Radius of Curvature"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
@@ -94,14 +92,34 @@ Here's an example of the lane line identified result.
 
 I did this in the 6th code cell of the IPython notebook. The radius of curvature was calculated by using the following equation given a second order polynomial curve:
 
-R
-​curve
-​​ =
-​∣2A∣
-​
-​(1+(2Ay+B)
-​2
-​​ )
-​3/2
-​​ 
-​​
+![alt text][image7]
+
+The vehicle offset is the difference between the detected lane center and the camera center, assuming the camera is mounted at the center of the car. The measurements are converted from pixels to meters according to the lane's width and height projected in the warped image. The conversion ratio is in the 2nd code cell of the IPython notebook.
+
+
+#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+
+I implemented this step in the 8th code cell in the `process_image()` function. Here is an example of my result on a test image:
+
+![alt text][image6]
+
+---
+
+### Pipeline (video)
+
+#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+
+Here are my video results:
+
+- [The project video](./output_videos/project_video_output.mp4)
+- [The challenge video](./output_videos/challenge_video_output.mp4)
+
+---
+
+### Discussion
+
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+
+My pipeline doesn't work on the harder challenge video at all and it's a little bit sensitive to the lighting, which may cause no lane lines detected. I might need to use gradient-based thresholds as a fallback in case of this issue.
+
+I spent a lot of time on tuning thresholds for identifying lane lines. There seems no perfect thresholds that can handle all three videos very well. I always need to make compromise. I believe this is not a good approach to generalize my pipeline. I might try to apply the deep learning to this project to see whether the pipeline could generalize well by feeding it enough data.
