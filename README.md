@@ -63,7 +63,7 @@ I used color thresholds to find white color and yellow color in the image. It's 
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform is the `warp_image()` function, which appears in the 5th code cell. I used the `cv2.getPerspectiveTransform()` function to perforam a perspective transform. It takes source and destination points as inputs. Both points are static and the source points were found by eyeballing the test image (`test_images/straight_lines1.jpg`).
+The code for my perspective transform is the `warp_image()` function, which appears in the 5th code cell. I used the `cv2.getPerspectiveTransform()` function to perform a perspective transform. It takes source and destination points as inputs. Both points are static and the source points were found by eyeballing the test image (`test_images/straight_lines1.jpg`).
 
 This resulted in the following source and destination points:
 
