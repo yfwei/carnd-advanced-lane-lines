@@ -122,4 +122,4 @@ Here are my video results:
 
 My pipeline doesn't work on the harder challenge video at all and it's a little bit sensitive to the lighting, which may cause no lane lines detected. I might need to use gradient-based thresholds as a fallback in case of this issue.
 
-I spent a lot of time on tuning thresholds for identifying lane lines. There seems no perfect thresholds that can handle all three videos very well. I always need to make compromise. I believe this is not a good approach to generalize my pipeline. I might try to apply the deep learning to this project to see whether the pipeline could generalize well by feeding it enough data.
+I spent a lot of time on tuning thresholds to identify lane lines. There seems no perfect thresholds that can handle all three videos equally well. I always need to make compromise. I believe this is not a good approach to generalize my pipeline. I might try to apply the deep learning to this project to see whether the pipeline could generalize well by feeding it enough data.
