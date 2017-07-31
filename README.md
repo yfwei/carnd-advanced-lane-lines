@@ -82,7 +82,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 I used the histogram to find the peak X positions and searched upward from those positions to find the left and right lane lines. The newly detected lane line would be rejected if its curvature was deviated too far from the previous one. The result was smoothed over the last 5 frames of video to have a more stable lines.
 
-After finding the good lane lines, I used the their pixels to fit a 2nd order polynomial curve. The code is contained in the 7th code cell of the the IPython notebook.
+After finding the good lane lines, I used their pixels to fit a 2nd order polynomial curve. The code is contained in the 7th code cell of the the IPython notebook.
 
 Here's an example of the lane line identified result.
 
